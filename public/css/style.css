@@ -1,0 +1,92 @@
+@font-face
+{
+font-family: 'HelveticaNeue';
+src: url('/fonts/HelveticaNeueLTPro-Th.otf');
+}
+
+@font-face
+{
+font-family: 'Buxton';
+src: url('/fonts/BuxtonSketch.ttf');
+}
+
+
+html, body{
+	background: #f3f3f3;
+	font-family: HelveticaNeue;
+}
+
+.panel{
+	text-align: center;
+	padding: 10px;
+	transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+}
+
+.panel:hover{
+	cursor: pointer;
+	 box-shadow: 0 0 5px #428bca;
+    -webkit-box-shadow: 0 0 5px #428bca; 
+    -moz-box-shadow: 0 0 5px #428bca; 
+}
+
+.panel img{
+	width: 150px;
+}
+
+.tags{
+	margin-top: 5px;
+	color: #fff;
+	width: 205px;
+	text-align:  center;;
+}
+
+.tags span{
+
+	padding: 3px;
+	margin: 2px;
+	background: #428bca;
+	border-radius: 2px;
+
+}
+
+.panel .glyphicon{
+	font-size: 50px;
+}
+
+.form-control{
+	font-size: 20px;
+}
+
+#searchResults{
+	font-size: 18px;
+	max-height: 500px;
+	overflow-y:auto;
+	list-style: none;
+}
+
+#searchResults li{
+	margin-bottom: 10px;
+	transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+}
+
+
+#searchResults li:hover{
+	cursor: pointer;
+	 box-shadow: 0 0 5px #428bca;
+    -webkit-box-shadow: 0 0 5px #428bca; 
+    -moz-box-shadow: 0 0 5px #428bca; 
+}
+
+#searchResults li div img{
+	width: 100px;
+	max-height: 100px;
+	padding-right: 15px;
+}
+
+#pic{
+	height: 250px;
+}
