@@ -1,0 +1,289 @@
+   <% layout('layout') -%>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"><h1>Day</h1></div>
+        <div class="col-md-3"><h1>Breakfast</h1></div>
+        <div class="col-md-3"><h1>Lunch</h1></div>
+        <div class="col-md-3"><h1>Dinner</h1></div> 
+      </div>
+      <div class="row">
+        <div class="col-md-3"><h2>Monday</h2></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div> 
+      </div>
+      <div class="row">
+        <div class="col-md-3"><h2>Tuesday</h2></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div> 
+      </div>
+      <div class="row">
+        <div class="col-md-3"><h2>Wednesday</h2></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div> 
+      </div>
+      <div class="row">
+        <div class="col-md-3"><h2>Thursday</h2></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div> 
+      </div>
+      <div class="row">
+        <div class="col-md-3"><h2>Friday</h2></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div> 
+      </div>
+      <div class="row">
+        <div class="col-md-3"><h2>Saturday</h2></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div> 
+      </div>
+      <div class="row">
+        <div class="col-md-3"><h2>Sunday</h2></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div>
+        <div class="col-md-3"><div class="panel" ><span class="glyphicon glyphicon glyphicon-plus-sign"></span></div></div> 
+      </div>
+    </div>
+
+
+  <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><input class="form-control" onkeyup="if(event.keyCode == 13) search(this);" type="text" placeholder="Search..." /></h4>
+      </div>
+      <div class="modal-body">
+        <ul id="searchResults">
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="infoTitle"></h4>
+      </div>
+      <div class="modal-body" style="max-height: 500px; overflow-y:auto">
+      <div class="row">
+      <div class="col-md-5">
+        <img id="pic" />
+        </div>
+        <div class="col-md-5">
+          <h3>Servings: <span id="serving"></span></h3>
+          <h3>Calories: <span id="calories"></span></h3>
+          <h3><span id="recipe"></span></h3>
+        </div>
+        </div>
+    
+        <h2>Ingredients</h2>
+        <ul id="ingredients">
+        </ul>
+
+        <div class="row" style="text-align:center">
+          <div class="col-md-4">
+            <h3>Dietery</h3>
+            <ul id="dietery">
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3>Health</h3>
+            <ul id="health">
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3>Cautions</h3>
+            <ul id="cautions">
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="$('#searchModal').modal('show');" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" id="add" data-dismiss="modal">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <script>
+  var stats = {};
+    var panels = $('.panel');
+    for (var i = 0; i < panels.length; i++) {
+      var panel = panels[i];
+      $(panel).attr('id', "panel"+i.toString());
+      $(panel).attr('entry', i.toString());
+      $(panel).click(function(){
+        var $this   = $(this),
+            tileNum = $this.attr("entry");
+            entryID = tileNum;
+        $('#searchModal').modal('show');        
+      });
+    };
+
+
+
+  var entryID = 0;
+  var curRecipe = {};
+
+    function search(data){
+      var query = $(data).val();
+      $.getJSON('/api/search/'+encodeURI(query), function(data){
+        var items = [];
+        for (var i = 0; i < data.length; i++) {
+          var item = data[i];
+          //items.push('<li><div><img src="'+item['image_url']+'"/>'+item['title']+'<div style="float:right"class="btn-group">  <button onclick="info(\''+item['recipe_id']+'\');" type="button" class="btn btn-default glyphicon glyphicon-info-sign"></button>  <button onclick="add(\''+item['recipe_id']+'\');" type="button" class="btn btn-default glyphicon glyphicon-plus"></button> </div></div></li>');
+
+           items.push('<li><div onclick="info(\''+item['recipe_id']+'\');"><img src="'+item['image_url']+'"/>'+item['title']+'</div></li>');
+        };
+        $('#searchResults').html(items.join(''));
+      });
+    }
+
+    function info(id){
+       
+        $.getJSON('/api/info/'+id, function(data){
+          console.log(data);
+          curRecipe = data;
+          $('#infoTitle').html(data['title']);
+          document.getElementById("pic").src=data['img'];
+          var temp = [];
+
+          for (var i = 0; i < data['ingr'].length; i++) {
+            temp.push('<li>'+data['ingr'][i]+'</li>');
+          };
+
+          $('#ingredients').html(temp.join(''));
+
+          $('#serving').html(data['yield']);
+          $('#calories').html(data['calories']);
+          $('#recipe').html('<a target="_blank" href="'+data['recipe']+'">Recipe</a>');
+
+          temp = [];
+          for (var i = 0; i < data['cautions'].length; i++) {
+           
+            temp.push('<li>'+data['cautions'][i]+'</li>');
+          };
+
+          $('#cautions').html(temp.join(''));
+
+           temp = [];
+          for (var i = 0; i < data['dietLabels'].length; i++) {
+           
+            temp.push('<li>'+data['dietLabels'][i]+'</li>');
+          };
+
+          $('#dietery').html(temp.join(''));
+
+           temp = [];
+          for (var i = 0; i < data['healthLabels'].length; i++) {
+           
+            temp.push('<li>'+data['healthLabels'][i]+'</li>');
+          };
+
+          $('#health').html(temp.join(''));
+
+          $('#add').click(function(){
+            add(id);
+          });
+          $('#searchModal').modal('hide');
+        $('#infoModal').modal('show');
+        });
+    }
+
+
+    function add(id){
+
+      var temp = curRecipe;
+      temp['user'] = '<%=user.id%>';
+      temp['entry'] = entryID;
+      temp['week'] = <%= week %>;
+      $.post('/api/add', temp, function(data){
+        fill([data]);
+      });
+
+      /*var tags = '';
+
+      for (var i = 0; i < curRecipe['cautions'].length; i++) {
+        tags += '<span>'+curRecipe['cautions'][i]+'</span> ';
+      };
+
+      for (var i = 0; i < curRecipe['dietLabels'].length; i++) {
+        tags += '<span>'+curRecipe['dietLabels'][i]+'</span> ';
+      };
+      for (var i = 0; i < curRecipe['healthLabels'].length; i++) {
+        tags += '<span>'+curRecipe['healthLabels'][i]+'</span> ';
+      };
+
+      var html = '<div onclick="rem(\''+entryID+'\');" style="float: left"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></div><h4>'+curRecipe['title']+'</h4><p>'+curRecipe['yield']+'x | '+curRecipe['calories']+' Cal</p><img src="'+curRecipe['img']+'"/><div class="tags">'+tags+'</div>';
+      $('#panel'+entryID.toString()).html(html);
+      $('#panel'+entryID).attr('onclick','').unbind('click');
+      $('#panel'+entryID).click(function(){
+        info(id);
+      });*/
+    }
+
+    function fill(data){
+      console.log(data);
+      for(var j=0; j<data.length; j++){
+        
+        var tags = '';
+
+        for (var i = 0; i < data[j]['cautions'].length; i++) {
+          tags += '<span>'+data[j]['cautions'][i]+'</span> ';
+        };
+
+        for (var i = 0; i < data[j]['dietLabels'].length; i++) {
+          tags += '<span>'+data[j]['dietLabels'][i]+'</span> ';
+        };
+        for (var i = 0; i < data[j]['healthLabels'].length; i++) {
+          tags += '<span>'+data[j]['healthLabels'][i]+'</span> ';
+        };
+
+        var html = '<div onclick="rem(\''+data[j]['entry']+'\', \''+data[j]['_id']+'\');" style="float: left"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></div><h4>'+data[j]['title']+'</h4><p>'+data[j]['yield']+'x | '+data[j]['calories']+' Cal</p><img src="'+data[j]['img']+'"/><div class="tags">'+tags+'</div>';
+        $('#panel'+data[j]['entry'].toString()).html(html);
+        $('#panel'+data[j]['entry']).attr('onclick','').unbind('click');
+        $('#panel'+data[j]['entry']).data('rid', data[j]['rid']);
+        $('#panel'+data[j]['entry']).click(function(){
+           var $this   = $(this),
+              tileNum = $this.data("rid");
+          info(tileNum);
+        });
+      }
+    }
+    <% if (data) { %>
+      fill(<%- data %>);
+    <% } %>
+
+
+    function rem(entry, id){
+      $.post('/api/remove', {id: id});
+      $('#panel'+entry).attr('onclick','').unbind('click');
+      $('#panel'+entry).html('<span class="glyphicon glyphicon glyphicon-plus-sign"></span>');
+      $('#panel'+entry).click(function(){
+        var $this   = $(this),
+            tileNum = $this.attr("entry");
+            entryID = tileNum;
+        $('#searchModal').modal('show');        
+      });
+    }
+    
+  </script>

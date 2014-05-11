@@ -33,6 +33,7 @@ html, body{
 
 .panel img{
 	width: 150px;
+	height: 100px;
 }
 
 .tags{
@@ -43,9 +44,9 @@ html, body{
 }
 
 .tags span{
-
+	display: inline-block;
 	padding: 3px;
-	margin: 2px;
+	margin: 2px;margin-top: 5px;
 	background: #428bca;
 	border-radius: 2px;
 
@@ -89,4 +90,5 @@ html, body{
 
 #pic{
 	height: 250px;
+	max-width: 230px;
 }
